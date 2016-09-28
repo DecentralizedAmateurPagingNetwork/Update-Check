@@ -31,7 +31,7 @@ if ($givenWebVersion !== $currentWebVersion) {
 
 ?>
 
-<style>h2, p { font-family: sans-serif; }</style>
+<style>h2, p { font-family: sans-serif; } h2 { margin: 0; } p { margin-top: .3em; }</style>
 
 <h2>DAPNET Core</h2>
 <p><b><?=$coreUpdateString?></b><br />

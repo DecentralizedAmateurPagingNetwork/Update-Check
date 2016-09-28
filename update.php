@@ -5,13 +5,13 @@ header('Access-Control-Allow-Origin: *');
 if (!isset($_GET['core']) || empty($_GET['core'])) {
 	$givenCoreVersion = '0.0.0';
 } else {
-	$givenCoreVersion = trim($_GET['core']);
+	$givenCoreVersion = htmlspecialchars(trim($_GET['core']));
 }
 
 if (!isset($_GET['web']) || empty($_GET['web'])) {
 	$givenWebVersion = '0.0.0';
 } else {
-	$givenWebVersion = trim($_GET['web']);
+	$givenWebVersion = htmlspecialchars(trim($_GET['web']));
 }
 
 $currentCoreVersion = trim(file_get_contents('./dapnet-core-current-version.txt'));

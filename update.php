@@ -8,6 +8,12 @@ if (!isset($_GET['core']) || empty($_GET['core'])) {
 	$givenCoreVersion = htmlspecialchars(trim($_GET['core']));
 }
 
+if (!isset($_GET['api']) || empty($_GET['api'])) {
+	$givenApiVersion = '0.0.0';
+} else {
+	$givenApiVersion = htmlspecialchars(trim($_GET['core']));
+}
+
 if (!isset($_GET['web']) || empty($_GET['web'])) {
 	$givenWebVersion = '0.0.0';
 } else {
@@ -37,6 +43,9 @@ if ($givenWebVersion !== $currentWebVersion) {
 <p><b><?=$coreUpdateString?></b><br />
 Your version: <b><?=$givenCoreVersion?></b><br />
 Current version: <b><?=$currentCoreVersion?></b></p>
+
+<h2>DAPNET API</h2>
+<p>Your version: <b><?=$givenCoreVersion?></b></p>
 
 <h2>DAPNET Web</h2>
 <p><b><?=$webUpdateString?></b><br />

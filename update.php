@@ -25,22 +25,24 @@ $currentCoreVersion = trim(file_get_contents('./dapnet-core-current-version.txt'
 $currentWebVersion = trim(file_get_contents('./dapnet-web-current-version.txt'));
 
 if ($givenCoreVersion !== $currentCoreVersion) {
-	$coreUpdateString = '<span style="background: rgba(255, 0, 0, 0.5)">An update is available.</span> Please download the current version from <a href="https://github.com/DecentralizedAmateurPagingNetwork/Core/releases" target="_blank">here</a>.';
+	$coreUpdateBadge = '<span class="label label-primary" style="font-size:.4em">OUTDATED</span>';
+	$coreUpdateString = 'Please download the current version from <a href="https://github.com/DecentralizedAmateurPagingNetwork/Core/releases" target="_blank">here</a>.';
 } else {
-	$coreUpdateString = '<span style="background: rgba(0, 255, 0, 0.5)">You are running the current version.</span>';
+	$coreUpdateBadge = '<span class="label label-success" style="font-size:.4em">UP TO DATE</span>';
+	$coreUpdateString = 'You are running the current version.';
 }
 
 if ($givenWebVersion !== $currentWebVersion) {
-	$webUpdateString = '<span style="background: rgba(255, 0, 0, 0.5)">An update is available.</span> Please download the current version from <a href="https://github.com/DecentralizedAmateurPagingNetwork/Web/releases" target="_blank">here</a>.';
+	$webUpdateBadge = '<span class="label label-primary" style="font-size:.4em">OUTDATED</span>';
+	$webUpdateString = 'Please download the current version from <a href="https://github.com/DecentralizedAmateurPagingNetwork/Web/releases" target="_blank">here</a>.';
 } else {
-	$webUpdateString = '<span style="background: rgba(0, 255, 0, 0.5)">You are running the current version.</span>';
+	$webUpdateBadge = '<span class="label label-success" style="font-size:.4em">UP TO DATE</span>';
+	$webUpdateString = 'You are running the current version.';
 }
 
 ?>
 
-<style>h2, p { font-family: sans-serif; } h2 { margin: 0; } p { margin-top: .3em; }</style>
-
-<h2>DAPNET Core</h2>
+<h2>DAPNET Core <?=$coreUpdateBadge?></h2>
 <p><b><?=$coreUpdateString?></b><br />
 Your version: <b><?=$givenCoreVersion?></b><br />
 Current version: <b><?=$currentCoreVersion?></b></p>
@@ -48,7 +50,7 @@ Current version: <b><?=$currentCoreVersion?></b></p>
 <h2>DAPNET API</h2>
 <p>Your version: <b><?=$givenApiVersion?></b></p>
 
-<h2>DAPNET Web</h2>
+<h2>DAPNET Web <?=$webUpdateBadge?></h2>
 <p><b><?=$webUpdateString?></b><br />
 Your version: <b><?=$givenWebVersion?></b><br />
 Current version: <b><?=$currentWebVersion?></b></p>

@@ -42,15 +42,21 @@ if ($givenWebVersion !== $currentWebVersion) {
 
 ?>
 
-<h2>DAPNET Core <?=$coreUpdateBadge?></h2>
-<p><b><?=$coreUpdateString?></b><br />
-Your version: <b><?=$givenCoreVersion?></b><br />
-Current version: <b><?=$currentCoreVersion?></b></p>
+<div class="col-lg-4">
+	<h2>DAPNET Core <?=$coreUpdateBadge?></h2>
+	<p><b><?=$coreUpdateString?></b><br />
+	Your version: <b><?=$givenCoreVersion?></b><br />
+	Current version: <b><?=$currentCoreVersion?></b></p>
+</div>
 
-<h2>DAPNET API</h2>
-<p>Your version: <b><?=$givenApiVersion?></b></p>
+<div class="col-lg-4">
+	<h2>DAPNET API</h2>
+	<p>Your version: <b><?=$givenApiVersion?></b></p>
+</div>
 
-<h2>DAPNET Web <?=$webUpdateBadge?></h2>
-<p><b><?=$webUpdateString?></b><br />
-Your version: <b><?=$givenWebVersion?></b><br />
-Current version: <b><?=$currentWebVersion?></b></p>
+<div class="col-lg-4">
+	<h2>DAPNET Web <?=$webUpdateBadge?></h2>
+	<p><b><?=$webUpdateString?></b><br />
+	Your version: <b><?=$givenWebVersion?></b><br />
+	Current version: <b><?=$currentWebVersion?></b></p>
+</div>
